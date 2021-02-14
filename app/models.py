@@ -12,7 +12,7 @@ class Usuarios (models.Model):
     senha = models.CharField(max_length=30)
 
 class Clientes (models.Model):
-    cpf = models.CharField(max_length=15, primary_key=True)
+    cpf = models.IntegerField(primary_key=True)
     nome = models.CharField(max_length=30)
     telefone = models.CharField(max_length=17)
     logradouro = models.CharField(max_length=30)
