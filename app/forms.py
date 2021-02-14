@@ -1,9 +1,15 @@
 from django.forms import ModelForm
-from app.models import Carros
+from app.models import Usuarios, Clientes
 
 
-# Create the form class.
-class CarrosForm(ModelForm):
+# Criação de classes de formulários
+class UsuariosForm(ModelForm):
     class Meta:
-        model = Carros
-        fields = ['modelo', 'marca', 'ano']
+        model = Usuarios
+        fields = ['id', 'nome', 'telefone', 'perfil', 'status', 'login', 'senha']
+
+
+class ClientesForm(ModelForm):
+    class Meta:
+        model = Clientes
+        fields = ['cpf', 'nome', 'telefone', 'logradouro', 'cidade', 'UF']

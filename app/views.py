@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from app.forms import CarrosForm
-from app.models import Carros
+from app.forms import UsuariosForm
+from app.models import Usuarios
 from django.core.paginator import Paginator
 
 
