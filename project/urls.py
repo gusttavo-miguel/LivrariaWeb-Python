@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from app.views import clientes, clientesForm, clientesCreate, clientesView, clientesEdit, clientesUpdate
+from app.views import clientes, clientesForm, clientesCreate, clientesView, clientesEdit, clientesUpdate, clientesDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('clientesView/<int:pk>/', clientesView, name='clientesView'),
     path('clientesEdit/<int:pk>/', clientesEdit, name='clientesEdit'),
     path('clientesUpdate/<int:pk>/', clientesUpdate, name='clientesUpdate'),
+    path('clientesDelete/<int:pk>/', clientesDelete, name='clientesDelete'),
 ]

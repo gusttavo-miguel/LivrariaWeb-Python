@@ -8,7 +8,13 @@ from django.core.paginator import Paginator
 
 def clientes(request):
     data = {}
-    data['db'] = Clientes.objects.all()
+    #data['db'] = Clientes.objects.all()
+    search = request.GET.get('search')
+
+    all = Clientes.objects.all()
+    paginator = Paginator(all, 5)
+    pages = request.GET.get('page')
+    data['db'] = paginator.get_page(pages)
     return render(request, 'clientes.html', data)
 
 
@@ -45,3 +51,9 @@ def clientesUpdate(request, pk):
     if form.is_valid():
         form.save()
         return redirect('clientes')
+
+
+def clientesDelete(request, pk):
+    db = Clientes.objects.get(pk=pk)
+    db.delete()
+    return redirect('clientes')
