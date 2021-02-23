@@ -3,27 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Visualização do Cliente</title>
+    <title>Visualização do Usuário</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
 <div class="col-8 m-auto pt-2 pb-2 text-center">
-    <h1>Visualização do Cliente</h1>
+    <h1>Visualização do Usuário</h1>
 </div>
 
 <div class="col-8 m-auto pt-3 pb-2 text-center">
-    <a href="/clientes" class="btn btn-info">Voltar</a>
+    <a href="/usuarios" class="btn btn-info">Voltar</a>
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
-    <strong>CPF: </strong>{{db.cpf}}<br>
+    <strong>ID: </strong>{{db.id}}<br>
     <strong>Nome: </strong>{{db.nome}}<br>
     <strong>Telefone: </strong>{{db.telefone}}<br>
-    <strong>Logradouro: </strong>{{db.logradouro}}<br>
-    <strong>Cidade: </strong>{{db.cidade}}<br>
-    <strong>UF: </strong>{{db.UF}}<br>
+    <strong>Perfil: </strong>{{db.perfil}}<br>
+    <strong>Status: </strong>{{db.status}}<br>
+    <strong>Login: </strong>{{db.login}}<br>
+    <strong>Senha: </strong>{{db.senha}}<br>
 </div>
 </body>
 </html>

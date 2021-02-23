@@ -3,23 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Clientes</title>
+    <title>Usuários</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
 <div class="col-8 m-auto pt-2 pb-2 text-center">
-    <h1>Clientes</h1>
+    <h1>Usuários</h1>
 </div>
 
-<div class="col-8 m-auto pt-3 pb-2 text-center">
-    <a href="/clientesForm" class="btn btn-success">Adicionar</a>
+<div class="col-8 m-auto pt-5 pb-2 text-center">
+    <a href="/menu" class="m-2 btn btn-success">Menu</a>
+    <a href="/usuariosForm" class="btn btn-success">Adicionar</a>
 </div>
+
+<!--<div class="col-8 m-auto pt-3 pb-2 text-center">-->
+<!--    <a href="/usuariosForm" class="btn btn-success">Adicionar</a>-->
+<!--</div>-->
 
 <div class="col-8 m-auto pt-3 pb-2 text-center">
     <form method="get">
-        <input type="text" cpf="search" name="search" class="form-control" placeholder="Filtrar pelo CPF">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Filtrar pelo ID">
     </form>
 </div>
 
@@ -27,28 +32,26 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">Cpf</th>
+            <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Telefone</th>
-            <th scope="col">Logradouro</th>
-            <th scope="col">Cidade</th>
-            <th scope="col">UF</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Status</th>
             <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody>
         {% for dbs in db %}
         <tr>
-            <th>{{dbs.cpf}}</th>
+            <th>{{dbs.id}}</th>
             <td>{{dbs.nome}}</td>
             <td>{{dbs.telefone}}</td>
-            <td>{{dbs.logradouro}}</td>
-            <td>{{dbs.cidade}}</td>
-            <td>{{dbs.UF}}</td>
+            <td>{{dbs.perfil}}</td>
+            <td>{{dbs.status}}</td>
             <td>
-                <a href="/clientesView/{{dbs.cpf}}/" class="btn btn-dark">Visualizar</a>
-                <a href="/clientesEdit/{{dbs.cpf}}/" class="btn btn-primary">Editar</a>
-                <a href="/clientesDelete/{{dbs.cpf}}/" class="btn btn-danger btnDel">Deletar</a>
+                <a href="/usuariosView/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                <a href="/usuariosEdit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                <a href="/usuariosDelete/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
             </td>
         </tr>
         {% endfor %}

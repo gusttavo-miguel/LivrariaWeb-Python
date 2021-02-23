@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Cadastro de Usuarios</h1>
+</div>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/usuarios" class="btn btn-info">Voltar</a>
+</div>
+
+<div class="col-8 m-auto pt-4 pb-2 text-center">
+    <div id="result"></div>
+    <form name="form" id="form" action="{% if db %}/usuariosUpdate/{{db.id}}/{%else%}/usuariosCreate/{% endif %}"
+          method="post">
+        {% csrf_token %}
+        <!--{{form.as_p}}-->
+<!--        <div class="form-group mt-4">CPF: {{form.id}}</div>-->
+        <div class="form-group mt-4">Nome: {{form.nome}}</div>
+        <div class="form-group mt-4">Telefone: {{form.telefone}}</div>
+        <div class="form-group mt-4">Perfil: {{form.perfil}}</div>
+        <div class="form-group mt-4">Status: {{form.status}}</div>
+        <div class="form-group mt-4">Login: {{form.login}}</div>
+        <div class="form-group mt-4">Senha: {{form.senha}}</div>
+        <input type="submit" class="btn btn-success" value="Salvar">
+    </form>
+</div>
+{% load static %}
+<script src="{% static 'javascript.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
