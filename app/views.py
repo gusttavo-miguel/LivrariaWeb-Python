@@ -3,8 +3,14 @@ from app.forms import ClientesForm, UsuariosForm
 from app.models import Clientes, Usuarios
 from django.core.paginator import Paginator
 
-def menu (request):
+
+def menu(request):
     return render(request, 'menu.html')
+
+
+def erro404(request):
+    return render(request, 'livros.html')
+
 
 def clientes(request):
     data = {}

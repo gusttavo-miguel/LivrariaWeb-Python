@@ -2,12 +2,16 @@ from django.contrib import admin
 from django.urls import path
 from app.views import clientes, clientesForm, clientesCreate, clientesView, clientesEdit, clientesUpdate, \
     clientesDelete, usuarios, usuariosForm, usuariosCreate, usuariosView, usuariosEdit, usuariosUpdate, usuariosDelete, \
-    menu
+    menu, erro404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Menu
     path('menu/', menu, name='menu'),
+
+    # Páginas em desenvolvimento, erro 404
+    path('livros/', erro404, name='livros'),
+    path('caixa/', erro404, name='caixa'),
 
     # Listas
     path('clientes/', clientes, name='clientes'),
